@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             // $table->bigInteger('game_id')->unsigned();
             $table->foreignId('game_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('subscription_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             // $table->timestamps();
         });
     }
@@ -35,6 +36,7 @@ return new class extends Migration
         Schema::table('services', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['game_id']);
+            $table->dropForeign(['subscription_id']);
         });
         Schema::dropIfExists('services');
     }
