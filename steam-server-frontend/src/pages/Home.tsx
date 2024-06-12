@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GameCard from "./GameCard";
+import GameCard from "../components/GameCard";
 import { Game } from "../interfaces/types";
 
 const Home = () => {
