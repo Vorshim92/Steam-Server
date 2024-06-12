@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Subscription;
-use App\Http\Requests\StoreSubscriptionRequest;
-use App\Http\Requests\UpdateSubscriptionRequest;
+use App\Models\Service;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreServiceRequest;
+use App\Http\Requests\UpdateServiceRequest;
 
-class SubscriptionController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class SubscriptionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSubscriptionRequest $request)
+    public function store(StoreServiceRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class SubscriptionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Subscription $subscription)
+    public function show(Service $service)
     {
         //
     }
@@ -43,7 +44,7 @@ class SubscriptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Subscription $subscription)
+    public function edit(Service $service)
     {
         //
     }
@@ -51,7 +52,7 @@ class SubscriptionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubscriptionRequest $request, Subscription $subscription)
+    public function update(UpdateServiceRequest $request, Service $service)
     {
         //
     }
@@ -59,7 +60,7 @@ class SubscriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subscription $subscription)
+    public function destroy(Service $service)
     {
         //
     }

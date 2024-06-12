@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Game;
-use App\Http\Requests\StoreGameRequest;
-use App\Http\Requests\UpdateGameRequest;
+use App\Models\Subscription;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSubscriptionRequest;
+use App\Http\Requests\UpdateSubscriptionRequest;
 
-class GameController extends Controller
+class SubscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $games = Game::all();
-        return ['data' => $games];
+        //
     }
 
     /**
@@ -28,7 +28,7 @@ class GameController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGameRequest $request)
+    public function store(StoreSubscriptionRequest $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Game $game)
+    public function show(Subscription $subscription)
     {
         //
     }
@@ -44,7 +44,7 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Game $game)
+    public function edit(Subscription $subscription)
     {
         //
     }
@@ -52,7 +52,7 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGameRequest $request, Game $game)
+    public function update(UpdateSubscriptionRequest $request, Subscription $subscription)
     {
         //
     }
@@ -60,7 +60,7 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Game $game)
+    public function destroy(Subscription $subscription)
     {
         //
     }
