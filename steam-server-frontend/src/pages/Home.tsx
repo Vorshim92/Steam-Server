@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import GameCard from "../components/GameCard";
 import { Game } from "../interfaces/types";
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import StoreSlider from "../components/Slider/StoreSlider";
 
 const Home = () => {
   const [games, setGames] = useState<Game[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -21,14 +24,16 @@ const Home = () => {
     };
 
     fetchGames();
-  }, [games]);
+  }, []);
+  console.log(games);
 
   return (
     <div className="container">
       <div className="row gap-3">
+        {games && <StoreSlider newsData={games} />}
         {games &&
           games.map((game) => (
-            <div className="col-3" key={game.id}>
+            <div className="col-4" key={game.id}>
               <GameCard game={game} />
             </div>
           ))}

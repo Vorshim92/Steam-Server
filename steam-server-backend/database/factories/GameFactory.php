@@ -19,7 +19,9 @@ class GameFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->text(),
-            'image' => null,
+            'image_thumbnail' => null,
+            'image_vertical' => null,
+            'image_title' => null,
         ];
     }
 }
