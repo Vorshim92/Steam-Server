@@ -1,8 +1,9 @@
 import React from "react";
 import { FaHome, FaTh, FaHeadset, FaUserCircle, FaNewspaper, FaPhotoVideo } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
+import "./styles.css";
 
-const NavBar = () => {
+const NavBarVintage = () => {
   return (
     <>
       <div id="navContainer" className="vh-100 d-flex align-items-center position-fixed start-0 top-0" role="navigation">
@@ -51,4 +52,4 @@ const NavBar = () => {
     </>
   );
 };
-export default NavBar;
+export default NavBarVintage;

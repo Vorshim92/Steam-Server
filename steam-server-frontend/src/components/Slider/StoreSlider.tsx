@@ -30,15 +30,15 @@ const StoreSlider = ({ newsData }: { newsData: Game[] }) => {
         <div
           className={styles.featured}
           style={{
-            backgroundImage: `url(${gameList[counter]?.image?.[0] || "http://192.168.1.10:8000/storage/game_images/default_image_thumbnail.webp"})`,
+            backgroundImage: `url(${gameList[counter]?.image_thumbnail || "http://localhost:8000/storage/game_images/default_image_thumbnail.webp"})`,
           }}
         >
           <div className={styles.itemText}>
-            <img src={gameList[counter].image && gameList[counter]?.image?.[0] ? gameList[counter]?.image?.[0] : "http://192.168.1.10:8000/storage/game_images/default_image_title.png"} alt="game" />
+            <img src={(gameList[counter].image_title && gameList[counter].image_title) || "http://localhost:8000/storage/game_images/default_image_title.png"} alt="game" />
             <h3>{gameList[counter].name}</h3>
             <div className={styles.buttons}>
               <a href="#!" className={`${styles.btn} ${styles.btnDownload}`}>
-                ACQUISTA ADESSO
+                AFFITTA SUBITO IL TUO GAME SERVER
               </a>
               <a href="#!" className={`${styles.btn} ${styles.btnWishlist}`}>
                 +
@@ -52,7 +52,7 @@ const StoreSlider = ({ newsData }: { newsData: Game[] }) => {
           {gameList.map((game, index) => (
             <li key={game.id} onClick={onClick} style={{ display: "block" }}>
               <div id={index.toString()} className={`${styles.game} ${index === counter ? styles.current : ""}`}>
-                <img src={game.image && game.image[0] ? game.image[0] : "http://192.168.1.10:8000/storage/game_images/default_image_vertical.jpg"} alt="game" />
+                <img src={game.image_vertical && game.image_vertical ? game.image_vertical : "http://localhost:8000/storage/game_images/default_image_vertical.jpg"} alt="game" />
                 <p className="text-white">{game.name.split(" ").slice(0, 4).join(" ")}...</p>
               </div>
             </li>
