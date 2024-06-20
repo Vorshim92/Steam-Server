@@ -14,10 +14,8 @@ export const getUserLogin = (formData: { email: string; password: string }) => {
 
       // Post login data
       await axios.post("/login", formData);
-      console.log(formData);
       // Get user data
       const { data } = await axios.get<User>(`/api/user`);
-      console.log(data);
       dispatch({
         type: ActionType.LOGIN_SUCCESS,
         payload: data,
