@@ -20,28 +20,28 @@ function App() {
 
   const { isLoading } = useAppSelector((state) => state.userLogin);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      dispatch({
-        type: ActionType.LOGIN_START,
-      });
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     dispatch({
+  //       type: ActionType.LOGIN_START,
+  //     });
 
-      try {
-        const res = await axios("/api/user");
-        dispatch({
-          type: ActionType.LOGIN_SUCCESS,
-          payload: res.data,
-        });
-      } catch (err) {
-        dispatch({
-          type: ActionType.LOGIN_FAILURE,
-          payload: (err as Error).message,
-        });
-      }
-    };
+  //     try {
+  //       const res = await axios("/api/user");
+  //       dispatch({
+  //         type: ActionType.LOGIN_SUCCESS,
+  //         payload: res.data,
+  //       });
+  //     } catch (err) {
+  //       dispatch({
+  //         type: ActionType.LOGIN_FAILURE,
+  //         payload: (err as Error).message,
+  //       });
+  //     }
+  //   };
 
-    fetchUser();
-  }, [dispatch]);
+  //   fetchUser();
+  // }, [dispatch]);
 
   return (
     <>
