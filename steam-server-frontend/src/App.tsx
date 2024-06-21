@@ -18,7 +18,7 @@ function App() {
   axios.defaults.withXSRFToken = true;
   const dispatch = useAppDispatch();
 
-  const { user, isLoading, error } = useAppSelector((state) => state.userLogin);
+  const { isLoading } = useAppSelector((state) => state.userLogin);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -45,24 +45,26 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        {/* <NavBarVintage/> */}
-        <Navbar />
-        <Routes>
-          {/* PER TUTTI */}
-          <Route path="/" element={<Home />} />
-          {/* PER CHI E' LOGGATO */}
-          <Route element={<ProtectedRoutes />}>
-            <Route path="/dashboard" />
-          </Route>
-          {/* PER CHI E' GUEST */}
-          <Route element={<GuestRoutes />}>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-          </Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      {!isLoading && (
+        <BrowserRouter>
+          {/* <NavBarVintage/> */}
+          <Navbar />
+          <Routes>
+            {/* PER TUTTI */}
+            <Route path="/" element={<Home />} />
+            {/* PER CHI E' LOGGATO */}
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/dashboard" />
+            </Route>
+            {/* PER CHI E' GUEST */}
+            <Route element={<GuestRoutes />}>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      )}
     </>
   );
 }
