@@ -45,26 +45,24 @@ function App() {
 
   return (
     <>
-      {!isLoading && (
-        <BrowserRouter>
-          {/* <NavBarVintage/> */}
-          <Navbar />
-          <Routes>
-            {/* PER TUTTI */}
-            <Route path="/" element={<Home />} />
-            {/* PER CHI E' LOGGATO */}
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/dashboard" />
-            </Route>
-            {/* PER CHI E' GUEST */}
-            <Route element={<GuestRoutes />}>
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-            </Route>
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      )}
+      <BrowserRouter>
+        {/* <NavBarVintage/> */}
+        <Navbar />
+        <Routes>
+          {/* PER TUTTI */}
+          <Route path="/" element={<Home />} />
+          {/* PER CHI E' LOGGATO */}
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/dashboard" />
+          </Route>
+          {/* PER CHI E' GUEST */}
+          <Route element={<GuestRoutes />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
