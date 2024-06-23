@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { GuestRoutes } from "./components/Routes/GuestRoutes";
 import { ProtectedRoutes } from "./components/Routes/ProtectedRoutes";
 import Products from "./pages/Products";
+import { InfinitySpin } from "react-loader-spinner";
 function App() {
   axios.defaults.withCredentials = true;
   axios.defaults.withXSRFToken = true;
@@ -46,7 +47,11 @@ function App() {
 
   return (
     <>
-      {!isLoading && (
+      {isLoading ? ( // Mostra lo spinner durante il caricamento
+        <div className="spinner-overlay">
+          <InfinitySpin width="400" color="#0077FF" />
+        </div>
+      ) : (
         <BrowserRouter>
           {/* <NavBarVintage/> */}
           <Navbar />
