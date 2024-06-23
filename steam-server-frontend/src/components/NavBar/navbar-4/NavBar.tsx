@@ -11,11 +11,12 @@ import image3 from "./3.svg";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { NavLink } from "react-router-dom";
 import { userLogout } from "../../../redux/actionCreators/actionUserLogout";
+
 const slides = [
   {
     name: "Development",
     image: image1,
-    items: ["HTML", "CSS", "JavaScript", "React", "Vuejs", "Svelte", "Preact", "Qwik", "Solidjs"],
+    items: ["Prodotti", "CSS", "JavaScript", "React", "Vuejs", "Svelte", "Preact", "Qwik", "Solidjs"],
   },
   {
     name: "Design",
@@ -53,9 +54,9 @@ export const Navbar = () => {
                     <h2>{slide.name}</h2>
                     <div className="links">
                       {slide.items?.map((item, index) => (
-                        <a href="" key={index}>
+                        <NavLink className="nav-btn" to={`/${item}`} key={index}>
                           <span>{item}</span>
-                        </a>
+                        </NavLink>
                       ))}
                     </div>
                   </div>
