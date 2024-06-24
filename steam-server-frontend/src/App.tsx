@@ -20,10 +20,10 @@ function App() {
   axios.defaults.withXSRFToken = true;
   const dispatch = useAppDispatch();
 
-  const { isLoading } = useAppSelector((state) => state.userLogin);
+  const { isLoading, user } = useAppSelector((state) => state.userLogin);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const checkUser = async () => {
       dispatch({
         type: ActionType.LOGIN_START,
       });
@@ -42,7 +42,9 @@ function App() {
       }
     };
 
-    fetchUser();
+    if (user) {
+      checkUser();
+    }
   }, [dispatch]);
 
   return (
