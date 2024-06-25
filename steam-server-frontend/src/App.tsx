@@ -9,6 +9,8 @@ import { ActionType } from "./redux/actionTypes/actionTypeUser";
 import { GuestRoutes } from "./components/Routes/GuestRoutes";
 import { ProtectedRoutes } from "./components/Routes/ProtectedRoutes";
 import { InfinitySpin } from "react-loader-spinner";
+import NavBarVintage from "./components/NavBar/navbar-1/NavBarVintage";
+import Dashboard from "./pages/Dashboard";
 
 // Utilizza React.lazy() per importare dinamicamente i componenti
 const Home = lazy(() => import("./pages/Home"));
@@ -58,13 +60,14 @@ function App() {
       ) : (
         <BrowserRouter>
           <Navbar />
+          <NavBarVintage />
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<Product />} />
               <Route element={<ProtectedRoutes />}>
-                <Route path="/dashboard" element={<div>Dashboard</div>} />
+                <Route path="/dashboard" element={<Dashboard />} />
               </Route>
               <Route element={<GuestRoutes />}>
                 <Route path="/register" element={<Register />} />

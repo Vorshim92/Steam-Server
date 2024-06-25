@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome, FaTh, FaHeadset, FaUserCircle, FaNewspaper, FaPhotoVideo } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const NavBarVintage = () => {
   return (
@@ -11,39 +12,39 @@ const NavBarVintage = () => {
           <div id="mainNav">
             <ul className="list-unstyled rounded ms-2 nav-ul">
               <li>
-                <a className="vlink rounded border-0" href="#">
+                <Link className="vlink rounded border-0" to={"/"}>
                   <FaHome /> <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="vlink rounded" href="#">
-                  <FaTh /> <span>Services</span>
-                </a>
+                <Link className="vlink rounded" to={"/products"}>
+                  <FaTh /> <span>Products</span>
+                </Link>
               </li>
               <li>
-                <a className="vlink rounded" href="#">
-                  <FaHeadset /> <span>Call Us</span>
-                </a>
+                <Link className="vlink rounded" to={"/dashboard"}>
+                  <FaUserCircle /> <span>Dashboard</span>
+                </Link>
               </li>
               <li>
-                <a className="vlink rounded" href="#">
+                <Link className="vlink rounded" to={"/"}>
                   <FaCalendarAlt /> <span>Schedule</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="vlink rounded" href="#">
-                  <FaUserCircle /> <span>About Us</span>
-                </a>
+                <Link className="vlink rounded" to={"/"}>
+                  <FaHeadset /> <span>About Us</span>
+                </Link>
               </li>
               <li>
-                <a className="vlink rounded" href="#">
+                <Link className="vlink rounded" to={"/"}>
                   <FaNewspaper /> <span>News</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="vlink rounded" href="#">
+                <Link className="vlink rounded" to={"/"}>
                   <FaPhotoVideo /> <span>Gallery</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

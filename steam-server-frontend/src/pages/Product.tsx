@@ -11,7 +11,7 @@ const Product = () => {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await axios.get("/api/v1/games" + id);
+        const response = await axios.get("/api/v1/games/" + id);
         const data: Game = response.data.data;
         setGame(data);
       } catch (error) {
