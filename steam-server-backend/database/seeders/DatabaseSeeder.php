@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
         Game::factory()->create([
             'name' => "Chivalry",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/chivalry_thumbnail.webp",
+            'image_thumbnail' => "http://localhost:8000/storage/game_images/chivalry_thumbnail.jpg",
             'image_vertical' => "http://localhost:8000/storage/game_images/chivalry_vertical.jpg",
             'image_title' => "http://localhost:8000/storage/game_images/chivalry_title.png",
         ]);
