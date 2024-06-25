@@ -7,7 +7,7 @@ const GameCard = ({ game }: { game: Game }) => {
       <div className="containerV">
         <div className="cardV">
           <div className="cardV__image-container">
-            <img className="cardV__image" src="http://localhost:8000/storage/game_images/default_image_vertical.jpg" alt="" />
+            <img className="cardV__image" src={game.image_vertical || "http://localhost:8000/storage/game_images/default_image_vertical.png"} alt="game" />
           </div>
 
           <svg className="cardV__svg" viewBox="0 0 800 500">
@@ -16,8 +16,8 @@ const GameCard = ({ game }: { game: Game }) => {
           </svg>
 
           <div className="cardV__content">
-            <h1 className="cardV__title">Lorem ipsum</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
+            <h1 className="cardV__title">{game.name}</h1>
+            <p>{game.description}</p>
           </div>
         </div>
       </div>
