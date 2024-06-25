@@ -16,7 +16,7 @@ const slides = [
   {
     name: "Development",
     image: image1,
-    items: ["home", "products", "JavaScript", "React", "Vuejs", "Svelte", "Preact", "Qwik", "Solidjs"],
+    items: ["products", "home", "JavaScript", "React", "Vuejs", "Svelte", "Preact", "Qwik", "Solidjs"],
   },
   {
     name: "Design",

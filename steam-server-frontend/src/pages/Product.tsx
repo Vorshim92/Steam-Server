@@ -3,6 +3,7 @@ import { Game } from "../interfaces/types";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 const Product = () => {
   const [game, setGame] = useState<Game>();
   const { id } = useParams();
@@ -10,12 +11,8 @@ const Product = () => {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/games/" + id);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        const data: Game = result.data;
+        const response = await axios.get("/api/v1/games" + id);
+        const data: Game = response.data.data;
         setGame(data);
       } catch (error) {
         console.error("There was a problem with the fetch operation:", error);

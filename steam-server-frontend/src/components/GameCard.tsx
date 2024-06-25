@@ -7,7 +7,7 @@ const GameCard = ({ game }: { game: Game }) => {
       <div className="containerV">
         <div className="cardV">
           <div className="cardV__image-container">
-            <img className="cardV__image" src={game.image_vertical || "http://localhost:8000/storage/game_images/default_image_vertical.png"} alt="game" />
+            <img className="cardV__image" src={game.image_vertical || "storage/game_images/default_image_vertical.png"} alt="game" />
           </div>
 
           <svg className="cardV__svg" viewBox="0 0 800 500">

@@ -31,55 +31,55 @@ class DatabaseSeeder extends Seeder
         Game::factory()->create([
             'name' => "Project Zomboid",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/project_zomboid_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/project_zomboid_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/project_zomboid_title.png",
+            'image_thumbnail' => "storage/game_images/project_zomboid_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/project_zomboid_vertical.jpg",
+            'image_title' => "storage/game_images/project_zomboid_title.png",
         ]);
 
         Game::factory()->create([
             'name' => "Minecraft",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/minecraft_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/minecraft_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/minecraft_title.png",
+            'image_thumbnail' => "storage/game_images/minecraft_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/minecraft_vertical.jpg",
+            'image_title' => "storage/game_images/minecraft_title.png",
         ]);
 
 
         Game::factory()->create([
             'name' => "7 Days to Die",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/7_days_to_die_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/7_days_to_die_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/7_days_to_die_title.png",
+            'image_thumbnail' => "storage/game_images/7_days_to_die_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/7_days_to_die_vertical.jpg",
+            'image_title' => "storage/game_images/7_days_to_die_title.png",
         ]);
 
         Game::factory()->create([
             'name' => "ARK: Survival Evolved",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/ark_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/ark_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/ark_title.png",
+            'image_thumbnail' => "storage/game_images/ark_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/ark_vertical.jpg",
+            'image_title' => "storage/game_images/ark_title.png",
         ]);
         Game::factory()->create([
             'name' => "DayZ",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/dayz_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/dayz_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/dayz_title.png",
+            'image_thumbnail' => "storage/game_images/dayz_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/dayz_vertical.jpg",
+            'image_title' => "storage/game_images/dayz_title.png",
         ]);
         Game::factory()->create([
             'name' => "Eurocup",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/eurocup_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/eurocup_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/eurocup_title.png",
+            'image_thumbnail' => "storage/game_images/eurocup_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/eurocup_vertical.jpg",
+            'image_title' => "storage/game_images/eurocup_title.png",
         ]);
         Game::factory()->create([
             'name' => "Chivalry",
             'description' => fake()->text(),
-            'image_thumbnail' => "http://localhost:8000/storage/game_images/chivalry_thumbnail.jpg",
-            'image_vertical' => "http://localhost:8000/storage/game_images/chivalry_vertical.jpg",
-            'image_title' => "http://localhost:8000/storage/game_images/chivalry_title.png",
+            'image_thumbnail' => "storage/game_images/chivalry_thumbnail.jpg",
+            'image_vertical' => "storage/game_images/chivalry_vertical.jpg",
+            'image_title' => "storage/game_images/chivalry_title.png",
         ]);
     }
 }
