@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('description');
             $table->string('image');
             $table->string('price');
+            $table->string('ram')->default("4GB");
+            $table->integer('slot')->default('4');
+            $table->string('cpu');
+            $table->string('platform')->default('steam');
             // $table->foreign('user_id')->references('id')->on('users');
             // $table->bigInteger('user_id')->unsigned();
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');

@@ -39,7 +39,8 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        $game = Game::findorfail($game->id);
+        return ['data' => $game];
     }
 
     /**

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="C-CDYiopamX6YyhbsEWv" name="Page-1">
-        <mxGraphModel dx="1468" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1308" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,7 +13,7 @@
                 <mxCell id="248" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#CC0000;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;" parent="1" source="234" target="247" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="234" value="&lt;font color=&quot;#cc0000&quot;&gt;SERVICES&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;type;&lt;br&gt;ram;&lt;br&gt;location;&lt;br&gt;&lt;br&gt;user_id;&lt;br&gt;game_id;&lt;br&gt;subscription_id;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="234" value="&lt;font color=&quot;#cc0000&quot;&gt;SERVICES&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;type;&amp;nbsp;&lt;br&gt;ram;&amp;nbsp;&lt;br&gt;location; (Frankfurt)&lt;br&gt;platform;(steam)&lt;br&gt;slots;&amp;nbsp;&lt;br&gt;FK&lt;br&gt;user_id;&lt;br&gt;game_id;&lt;br&gt;subscription_id;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="750" y="720" width="210" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="247" value="&lt;font color=&quot;#cc0000&quot;&gt;GAMES&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;name;&lt;br&gt;description;&lt;br&gt;image;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -25,14 +25,20 @@
                 <mxCell id="251" style="edgeStyle=none;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="249" target="231" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="249" value="&lt;font color=&quot;#cc0000&quot;&gt;SUBSCRIPTIONS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;payment_method;&lt;br&gt;location;&lt;br&gt;price;&lt;br&gt;duration;&lt;br&gt;&lt;br&gt;user_id;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="249" value="&lt;font color=&quot;#cc0000&quot;&gt;SUBSCRIPTIONS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;payment_method;&lt;br&gt;location;&lt;br&gt;price; (slot depend)&lt;br&gt;duration; (30dd)&lt;br&gt;&lt;br&gt;user_id;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1160" y="720" width="210" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="252" value="1) Users (breeze)&lt;br&gt;2) Games&lt;br&gt;3) Subscriptions&lt;br&gt;4) Services" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" parent="1" vertex="1">
                     <mxGeometry x="1220" y="200" width="140" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="253" value="&lt;font color=&quot;#cc0000&quot;&gt;PAYMENTS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;}" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="253" value="&lt;font color=&quot;#cc0000&quot;&gt;PAYMENTS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1170" y="460" width="210" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="254" value="&lt;font color=&quot;#cc0000&quot;&gt;GameServer&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status;&lt;br&gt;hostsystems;&lt;br&gt;price; (slot depend)&lt;br&gt;duration; (30dd)&lt;br&gt;username;&lt;br&gt;user_id;&lt;br&gt;service_id&lt;br&gt;location_id&lt;br&gt;ip;&lt;br&gt;port;&lt;br&gt;rcon_port;&lt;br&gt;memory;&lt;br&gt;game;&lt;br&gt;game_name;&lt;br&gt;slots;&lt;br&gt;credentials;&lt;br&gt;}" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1160" y="980" width="210" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="255" value="&lt;font color=&quot;#cc0000&quot;&gt;ServerMachine&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status;&lt;br&gt;servername;&lt;br&gt;hostname;&lt;br&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1420" y="980" width="210" height="370" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

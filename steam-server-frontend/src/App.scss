@@ -38,13 +38,13 @@ body {
   }
   .con {
     &.con-1 {
-      background: darken(#222222, 1.5%);
+      background: darken(#222222, 2.5%);
     }
     &.con-2 {
       background: darken(#222222, 2.5%);
     }
     &.con-3 {
-      background: lighten(#222222, 1%);
+      background: darken(#222222, 2.5%);
     }
   }
   .list-unstyled {

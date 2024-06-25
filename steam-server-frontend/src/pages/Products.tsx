@@ -44,7 +44,7 @@ const Products = () => {
           {searchResults.length > 0 && (
             <div className="search-results  w-100 bg-white shadow-lg">
               {searchResults.map((result) => (
-                <Link key={result.id} to={`/games/${result.id}`} className="search-result-item d-block p-2 text-dark" onClick={() => setSearchQuery("")}>
+                <Link key={result.id} to={`/products/${result.id}`} className="search-result-item d-block p-2 text-dark" onClick={() => setSearchQuery("")}>
                   {result.name}
                 </Link>
               ))}

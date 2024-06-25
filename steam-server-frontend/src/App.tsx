@@ -1,20 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/NavBar/navbar-4/NavBar";
-import NavBarVintage from "./components/NavBar/navbar-1/NavBarVintage";
-import { Register } from "./components/Sign/Register/Register";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
-import Login from "./components/Sign/Login/Login";
 import { ActionType } from "./redux/actionTypes/actionTypeUser";
-import { useEffect } from "react";
 import { GuestRoutes } from "./components/Routes/GuestRoutes";
 import { ProtectedRoutes } from "./components/Routes/ProtectedRoutes";
-import Products from "./pages/Products";
 import { InfinitySpin } from "react-loader-spinner";
+
+// Utilizza React.lazy() per importare dinamicamente i componenti
+const Home = lazy(() => import("./pages/Home"));
+const Products = lazy(() => import("./pages/Products"));
+const Product = lazy(() => import("./pages/Product"));
+const Register = lazy(() => import("./components/Sign/Register/Register"));
+const Login = lazy(() => import("./components/Sign/Login/Login"));
+
 function App() {
   axios.defaults.withCredentials = true;
   axios.defaults.withXSRFToken = true;
@@ -49,28 +51,27 @@ function App() {
 
   return (
     <>
-      {isLoading ? ( // Mostra lo spinner durante il caricamento
+      {isLoading ? (
         <div className="spinner-overlay">
           <InfinitySpin width="400" color="#0077FF" />
         </div>
       ) : (
         <BrowserRouter>
-          {/* <NavBarVintage/> */}
           <Navbar />
-          <Routes>
-            {/* PER TUTTI */}
-            <Route path="/" element={<Home />} />
-            <Route path="/prodotti" element={<Products />} />
-            {/* PER CHI E' LOGGATO */}
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/dashboard" />
-            </Route>
-            {/* PER CHI E' GUEST */}
-            <Route element={<GuestRoutes />}>
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-            </Route>
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<Product />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/dashboard" element={<div>Dashboard</div>} />
+              </Route>
+              <Route element={<GuestRoutes />}>
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+              </Route>
+            </Routes>
+          </Suspense>
           <Footer />
         </BrowserRouter>
       )}

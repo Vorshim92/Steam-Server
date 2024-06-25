@@ -9,5 +9,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::name('api.v1.')->prefix('v1')->group(function () {
-    Route::get('/games', [GameController::class, 'index'])->name('games.index');
+    Route::apiResource('/games', GameController::class);
 });

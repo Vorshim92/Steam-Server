@@ -23,12 +23,13 @@ const useDebounce = (value: string, delay: number) => {
   return debouncedValue;
 };
 
-export const Register = () => {
-  console.log("sono in register");
+const Register = () => {
   const dispatch = useAppDispatch();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isValid, setIsValid] = useState(false);
+  const [isUsernameValid, setIsUsernameValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -36,42 +37,41 @@ export const Register = () => {
     password_confirmation: "",
   });
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const { name, value } = event.target;
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+
     if (name === "username") {
       setIsLoading(true);
     }
-
-    setFormData((prevFormData) => {
-      const newFormData = {
-        ...prevFormData,
-        [name]: value,
-      };
-
-      if (name !== "password" && value !== prevFormData.password) {
-        setIsValid(false);
-      } else if (name === "username" && usernames.includes(value)) {
-        setIsValid(false);
-      } else {
-        setIsValid(true);
-      }
-
-      return newFormData;
-    });
   };
   const debouncedUsername = useDebounce(formData.username, 500);
 
   useEffect(() => {
-    setIsValid(!usernames.some((u) => u === debouncedUsername));
-    setIsLoading(false);
+    if (debouncedUsername) {
+      setIsLoading(true);
+      setIsUsernameValid(!usernames.includes(debouncedUsername));
+      setIsLoading(false);
+    } else {
+      setIsUsernameValid(false);
+      setIsLoading(false);
+    }
   }, [debouncedUsername]);
+
+  useEffect(() => {
+    setIsFormValid(isUsernameValid && formData.password === formData.password_confirmation && formData.password !== "" && formData.email !== "");
+  }, [formData, isUsernameValid]);
 
   const onSubmitRegister = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       // Get CSRF token
-      await axios.get("/sanctum/csrf-cookie");
+      // await axios.get("/sanctum/csrf-cookie");
 
       // Post login data
       console.log(formData);
@@ -95,14 +95,15 @@ export const Register = () => {
       <img src={logo} />
       <h2>Sign Up</h2>
       <form className="form text-white" onSubmit={onSubmitRegister}>
-        <Username isLoading={isLoading} isValid={isValid} handleChange={handleInputChange} />
+        <Username isLoading={isLoading} isValid={isUsernameValid} handleChange={handleInputChange} username={formData.username} />
         <input name="email" onChange={handleInputChange} autoComplete="off" spellCheck="false" className="control" type="email" placeholder="Email" />
         <PasswordStrength placeholder="Password" handleChange={handleInputChange} />
         <input name="password_confirmation" spellCheck="false" className="control" type="password" placeholder="Confirm Password" onChange={handleInputChange} />
-        <button disabled={!isValid} className="control" type="submit">
+        <button disabled={!isFormValid} className="control" type="submit">
           JOIN NOW
         </button>
       </form>
     </div>
   );
 };
+export default Register;

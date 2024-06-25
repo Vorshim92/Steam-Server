@@ -25,7 +25,6 @@ const Home = () => {
 
     fetchGames();
   }, []);
-  console.log(games);
 
   return (
     <div className="container">
