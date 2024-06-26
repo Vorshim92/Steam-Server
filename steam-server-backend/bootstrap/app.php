@@ -21,6 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
             'admin' => IsAdmin::class,
         ]);
+        // $middleware->trustHosts(at: ['192.168.1.10']);
+
 
         //
     })

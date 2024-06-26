@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { getUserLogin } from "../../../redux/actionCreators/actionUserLogin";
+import { Link } from "react-router-dom";
+import ModalResetPsw from "../../Modals/ModalResetPsw";
 const Login = () => {
   const dispatch = useAppDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -23,6 +26,10 @@ const Login = () => {
     await dispatch(getUserLogin(formData));
   };
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <section className="page login-1">
@@ -35,11 +42,19 @@ const Login = () => {
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleInputChange} />
             <button type="submit">Sign In</button>
           </form>
-          <footer>
-            Need an account? Sign up <a href="#">here</a>
-          </footer>
+          <p>
+            Need an account? Sign up <Link to="/register">here</Link>
+          </p>
+
+          <p>
+            Forgot your password?{" "}
+            <span className="text-warning" onClick={() => setIsOpen(true)}>
+              Reset
+            </span>
+          </p>
         </div>
       </section>
+      <ModalResetPsw isOpen={modalIsOpen} onRequestClose={closeModal} />
     </>
   );
 };

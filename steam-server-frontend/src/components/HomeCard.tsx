@@ -1,7 +1,7 @@
 import React from "react";
 import { Game } from "../interfaces/types";
-import "./GameCard.scss";
-const GameCard = ({ game }: { game: Game }) => {
+import "./HomeCard.scss";
+const HomeCard = ({ game }: { game: Game }) => {
   return (
     <>
       <div className="containerV">
@@ -24,4 +24,4 @@ const GameCard = ({ game }: { game: Game }) => {
     </>
   );
 };
-export default GameCard;
+export default HomeCard;
