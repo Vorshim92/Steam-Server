@@ -11843,6 +11843,10 @@ body {
   background-color: #313131;
 }
 
+.marginNav {
+  margin-top: 100px;
+}
+
 /* components/Spinner/Spinner.css */
 .spinner-overlay {
   position: fixed;

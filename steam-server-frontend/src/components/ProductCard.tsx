@@ -6,15 +6,11 @@ const ProductCard = ({ game }: { game: Game }) => {
     <>
       <div className="col-sm-6 col-md-4 col-lg-3">
         <div className="product-card position-relative cursor-pointer d-flex flex-row w-100">
-          <a href="/it-IT/offers/ark-survival-ascended?platform=pc" className="cursor-pointer">
+          <a href={`/products/${game.id}`} className="cursor-pointer">
             <div className="position-relative d-flex w-100 align-items-center justify-content-center overflow-hidden">
               <img src={game.image_vertical ?? "storage/game_images/default_image_vertical.jpg"} alt="ARK: Survival Ascended Game Server" className="h-100 w-100 " />
               <div className=" top-0 start-0 w-100 h-100 bg-dark opacity-30 transition-opacity"></div>
-              <img
-                src="https://static.nitrado.net/cdn/content_files/production/games/ark-survival-ascended/gamecovers/ark-survival-ascended-logo.png"
-                alt="ARK: Survival Ascended"
-                className="position-absolute start-50 top-50 mh-60 translate-middle px-3 transition filter-grayscale-50 opacity-80"
-              />
+              <img src={game.image_title ?? "storage/game_images/default_image_title.jpg"} alt="ARK: Survival Ascended" className="position-absolute start-50 top-50 mh-60 translate-middle px-3 transition filter-grayscale-50 opacity-80" />
               <div className="position-absolute top-0 d-flex w-100 justify-content-between px-2 pt-1">
                 <div className="d-flex flex-column"></div>
                 <div className="d-flex flex-column">

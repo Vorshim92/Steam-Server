@@ -11,6 +11,8 @@ import { ProtectedRoutes } from "./components/Routes/ProtectedRoutes";
 import { InfinitySpin } from "react-loader-spinner";
 import NavBarVintage from "./components/NavBar/navbar-1/NavBarVintage";
 import Dashboard from "./pages/Dashboard";
+import NavBar2 from "./components/NavBar/navbar-2/NavBar2";
+import SpinnerVorshim from "./components/Spinners/SpinnerVorshim";
 
 // Utilizza React.lazy() per importare dinamicamente i componenti
 const Home = lazy(() => import("./pages/Home"));
@@ -55,26 +57,31 @@ function App() {
     <>
       {isLoading ? (
         <div className="spinner-overlay">
-          <InfinitySpin width="400" color="#0077FF" />
+          {/* <InfinitySpin width="400" color="#0077FF" /> */}
+          <SpinnerVorshim />
         </div>
       ) : (
         <BrowserRouter>
-          <Navbar />
+          {/* <Navbar /> */}
+          <NavBar2 />
           <NavBarVintage />
-          <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:id" element={<Product />} />
-              <Route element={<ProtectedRoutes />}>
-                <Route path="/dashboard" element={<Dashboard />} />
-              </Route>
-              <Route element={<GuestRoutes />}>
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-              </Route>
-            </Routes>
-          </Suspense>
+          <div className="container marginNav">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/products/:id" element={<Product />} />
+                <Route element={<ProtectedRoutes />}>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                </Route>
+                <Route element={<GuestRoutes />}>
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+                </Route>
+              </Routes>
+            </Suspense>
+          </div>
+
           <Footer />
         </BrowserRouter>
       )}

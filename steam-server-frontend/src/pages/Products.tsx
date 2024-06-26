@@ -32,7 +32,7 @@ const Products = () => {
   }, [searchQuery, games]);
 
   return (
-    <div className="container">
+    <>
       <div className="row row-gap-3 mt-5">
         <div className="col text-center text-white">
           <h1>SCEGLI IL TUO GIOCO</h1>
@@ -49,7 +49,7 @@ const Products = () => {
         </div>
       </div>
       <div className="row row-gap-3 mt-5">{games && games.map((game) => <ProductCard game={game} key={game.id} />)}</div>
-    </div>
+    </>
   );
 };
 export default Products;

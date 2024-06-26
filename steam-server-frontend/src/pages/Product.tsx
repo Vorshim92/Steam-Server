@@ -25,7 +25,7 @@ const Product = () => {
   return (
     <>
       {game && (
-        <div className="container">
+        <>
           <div className="row row-gap-3 mt-5">
             <div className="col text-center text-white">
               <h1>{game.name}</h1>
@@ -34,7 +34,7 @@ const Product = () => {
           <div className="row row-gap-3 mt-5">
             <ProductCard game={game} />
           </div>
-        </div>
+        </>
       )}
     </>
   );
