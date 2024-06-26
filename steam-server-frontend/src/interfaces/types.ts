@@ -5,4 +5,7 @@ export interface Game {
   image_thumbnail: string | null;
   image_vertical: string | null;
   image_title: string | null;
+  isTop: boolean;
+  isLatest: boolean;
+  isFeatured: boolean;
 }

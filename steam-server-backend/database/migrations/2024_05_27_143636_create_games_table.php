@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('image_thumbnail')->nullable();
             $table->string('image_vertical')->nullable();
             $table->string('image_title')->nullable();
+            $table->boolean('isTop')->default(false);
+            $table->boolean('isFeatured')->default(false);
+            $table->boolean('isLatest')->default(false);
 
             // $table->timestamps();
         });
