@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -14,22 +15,20 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('name');
+            $table->string('game_name');
             $table->string('description');
-            $table->string('image');
-            $table->string('price');
-            $table->string('ram')->default("4GB");
-            $table->integer('slot')->default('4');
+            $table->integer('price');
             $table->string('cpu');
-            $table->string('platform')->default('steam');
-            // $table->foreign('user_id')->references('id')->on('users');
-            // $table->bigInteger('user_id')->unsigned();
-            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            // $table->bigInteger('game_id')->unsigned();
+            $table->enum('ram', ['4', '8', '16', '32', '64', '128'])->default('4');
+            $table->enum('location', ['Frankfurt', 'London', 'Milan']);
+            $table->enum('platform', ['steam', 'pc'])->default('steam');
+            $table->integer('slots')->unsigned();
             $table->foreignId('game_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('subscription_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            // $table->timestamps();
+            $table->timestamps();
         });
+
+        // Add check constraint for slots
+        DB::statement('ALTER TABLE services ADD CONSTRAINT check_slots_range CHECK (slots BETWEEN 1 AND 128)');
     }
 
     /**
@@ -38,10 +37,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('services', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
             $table->dropForeign(['game_id']);
-            $table->dropForeign(['subscription_id']);
         });
+
+        // Drop the check constraint
+        DB::statement('ALTER TABLE services DROP CONSTRAINT check_slots_range');
+
         Schema::dropIfExists('services');
     }
 };

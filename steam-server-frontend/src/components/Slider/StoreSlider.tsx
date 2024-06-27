@@ -3,10 +3,8 @@ import styles from "./StoreSlider.module.css";
 import { Game } from "../../interfaces/types";
 
 const StoreSlider = ({ newsData }: { newsData: Game[] }) => {
-  console.log(newsData);
   const gameList = newsData.slice(0, 6);
   const [counter, setCounter] = useState(0);
-  console.log(gameList);
 
   useEffect(() => {
     const interval = setInterval(() => {

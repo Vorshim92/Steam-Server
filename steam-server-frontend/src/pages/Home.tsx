@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import HomeCard from "../components/HomeCard";
+import HomeCard from "../components/Cards/HomeCard";
 import { Game } from "../interfaces/types";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import StoreSlider from "../components/Slider/StoreSlider";
@@ -65,9 +65,7 @@ const Home = () => {
             .slice(0, 3)
             .map((game) => (
               <div className="col-3" key={game.id}>
-                <Link to={`/products/${game.id}`}>
-                  <HomeCard game={game} />
-                </Link>
+                <HomeCard game={game} />
               </div>
             ))}
         </div>

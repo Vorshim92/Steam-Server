@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Game } from "../interfaces/types";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/Cards/ProductCard";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";

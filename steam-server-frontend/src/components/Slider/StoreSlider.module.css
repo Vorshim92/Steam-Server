@@ -67,6 +67,10 @@
   color: azure;
 }
 
+.featured .itemText img {
+  width: 100%;
+}
+
 .featured .itemText::before {
   position: absolute;
   background: rgba(0, 0, 0, 0.3);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Game } from "../interfaces/types";
+import { Game } from "../../interfaces/types";
 import "./ProductCard.scss";
 const ProductCard = ({ game }: { game: Game }) => {
   return (
