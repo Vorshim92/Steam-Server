@@ -29,32 +29,6 @@ const ModalResetPsw = ({ isOpen, onRequestClose }: ModalResetPswProps) => {
   return (
     <>
       <ReactModal isOpen={isOpen} onRequestClose={onRequestClose} ariaHideApp={false}>
-        {/* <div id="cuboid">
-          <form onSubmit={handleSubmit}>
-            <div>
-              <p classNameName="cuboid-text">Subscribe</p>
-            </div>
-
-            <div>
-              <input type="email" name="email" placeholder="Email" value={email} onChange={handleInputChange} />
-              <button type="submit"> Submit </button>
-            </div>
-
-            <div>
-              <p className="cuboid-text loader">Just a moment</p>
-            </div>
-
-            <div>
-              <span className="reset-icon">
-                <i className="fa fa-refresh"></i>
-              </span>
-              <p className="cuboid-text">Thank you, we'll be in touch</p>
-            </div>
-          </form>
-
-          <button onClick={onRequestClose}>Close</button>
-        </div> */}
-
         <div className="cd-popup-container">
           <form onSubmit={handleSubmit}>
             <p>Insert here your email</p>

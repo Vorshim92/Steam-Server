@@ -13,6 +13,7 @@ import NavBarVintage from "./components/NavBar/navbar-1/NavBarVintage";
 import Dashboard from "./pages/Dashboard";
 import NavBar2 from "./components/NavBar/navbar-2/NavBar2";
 import SpinnerVorshim from "./components/Spinners/SpinnerVorshim";
+import ResetPassword from "./components/Sign/ResetPsw/ResetPassword";
 
 // Utilizza React.lazy() per importare dinamicamente i componenti
 const Home = lazy(() => import("./pages/Home"));
@@ -77,6 +78,7 @@ function App() {
                 <Route element={<GuestRoutes />}>
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
+                  <Route path="/password-reset/:token" element={<ResetPassword />} />
                 </Route>
               </Routes>
             </Suspense>
