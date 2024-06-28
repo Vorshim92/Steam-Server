@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./FalloutCard.scss";
-const FalloutCard = () => {
+import { Game, Service } from "../../interfaces/types";
+const FalloutCard = ({ service }: { service: Service }) => {
   const [cardFlipped, setCardFlipped] = useState(false);
   const [unflipping, setUnflipping] = useState(false);
 
@@ -18,8 +19,8 @@ const FalloutCard = () => {
 
   return (
     <>
-      <div className="card-scene">
-        <div id="card" className={`card ${cardFlipped ? "card--flipped" : ""} ${unflipping ? "card--unflip" : ""}`} onClick={handleCardClick}>
+      <div className="card-scene ">
+        <div className={`fallout-card ${cardFlipped ? "card--flipped" : ""} ${unflipping ? "card--unflip" : ""}`} onClick={handleCardClick}>
           <div className="card-face card-backing">
             <div className="grain-overlay"></div>
             <div className="bump"></div>
@@ -50,18 +51,18 @@ const FalloutCard = () => {
             <h1>
               <span className="bump">
                 <b className="outer">
-                  <b className="inner">1</b>
+                  <b className="inner">{service.ram}</b>
                 </b>
               </span>
-              Slugger
+              {service.game_name}
             </h1>
             <div className="main-pane">
               <img className="slugger" src="https://vignette.wikia.nocookie.net/fallout/images/6/69/Fo76_Slugger.png/revision/latest/scale-to-width-down/353?cb=20181125171021" />
             </div>
             <div className="desc">
-              <p>Your two-handed melee weapons now do +10% damage.</p>
+              <p>{service.description}</p>
               <div className="special" data-category="strength">
-                S
+                {service.price}
               </div>
               <div id="level" className="level" data-level-cap="3" data-level-current="1"></div>
             </div>

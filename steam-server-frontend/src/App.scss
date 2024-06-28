@@ -10,6 +10,9 @@ body {
   margin-top: 100px;
 }
 
+a {
+  text-decoration: none;
+}
 /* components/Spinner/Spinner.css */
 .spinner-overlay {
   position: fixed;
@@ -145,4 +148,43 @@ body {
       }
     }
   }
+}
+
+// Dashboard
+
+.dash-sidebar {
+  // min-height: 100vh;
+  background-color: #313131;
+  padding: 5px;
+  color: #fff;
+
+  .sb {
+    padding: 5px;
+  }
+  .sb-profile {
+    padding: 10px 0 15px 30px;
+  }
+  .sb-drop {
+    padding: 5px;
+    background-color: #111111;
+    border: 1px solid #ffd744;
+    & a {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 50px;
+      text-align: left;
+    }
+  }
+}
+.content_box {
+  background: rgba(48, 48, 48, 0.4);
+  background-size: contain !important;
+  width: auto !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

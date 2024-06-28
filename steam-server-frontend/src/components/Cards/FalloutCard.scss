@@ -18,13 +18,13 @@ html {
   --color-backing-light4: #2f5c8c;
 }
 
-.card h1,
+.fallout-card h1,
 .level {
   font-family: "Staatliches", sans-serif;
 }
 
 p,
-.card span,
+.fallout-card span,
 .special {
   font-family: "Lakki Reddy", cursive;
 }
@@ -47,7 +47,7 @@ body > h1 {
   width: 37rem;
   height: 47rem;
   perspective: 600px;
-  animation: cardAppear 1.4s forwards;
+  // animation: cardAppear 2s forwards;
   &:hover {
     animation: cardAnimate 0.5s forwards;
   }
@@ -77,12 +77,13 @@ body > h1 {
   }
 }
 
-.card {
+.fallout-card {
   height: 100%;
   width: 100%;
   position: relative;
   transform-style: preserve-3d;
   transform: rotateY(180deg);
+
   &.card--flipped {
     animation: cardFlip 0.275s forwards linear;
   }
@@ -221,14 +222,14 @@ body > h1 {
 }
 .card-backing .bump {
   right: -2rem;
-  &:before {
-    // Covers the box shadow along the top.
-    left: -2rem;
-    top: 1rem;
-    height: 0.3rem;
-    width: 1.5rem;
-    background-color: var(--color-bone);
-  }
+  // &:before {
+  //   // Covers the box shadow along the top.
+  //   left: -2rem;
+  //   top: 1rem;
+  //   height: 0.3rem;
+  //   width: 1.5rem;
+  //   background-color: var(--color-bone);
+  // }
 
   &:after {
     background-color: var(--color-backing-top);
@@ -241,18 +242,18 @@ body > h1 {
 .card-front .bump {
   left: -2rem;
   box-shadow: 0 0 4px 2px #4e4e4e;
-  &:before {
-    left: 5rem;
-    top: 1rem;
-    height: 0.45rem;
-    width: 4rem;
-  }
-  &:after {
-    top: 1rem;
-    left: 1rem;
-    height: 100%;
-    width: 6.5rem;
-  }
+  // &:before {
+  //   left: 5rem;
+  //   top: 1rem;
+  //   height: 0.45rem;
+  //   width: 4rem;
+  // }
+  // &:after {
+  //   top: 1rem;
+  //   left: 1rem;
+  //   height: 100%;
+  //   width: 6.5rem;
+  // }
 }
 
 .vault-tec {
@@ -372,10 +373,10 @@ body > h1 {
   h1 {
     position: relative;
     color: var(--color-white);
-    font-size: 3.6rem;
+    font-size: 3rem;
     text-align: center;
     letter-spacing: 1px;
-    line-height: 135%;
+    // line-height: 135%;
 
     background-color: var(--color-main-dark);
 
@@ -400,7 +401,7 @@ body > h1 {
     span.bump {
       color: #4e4943;
       font-size: 5.5rem;
-      line-height: 170%;
+      line-height: 120%;
       vertical-align: middle;
     }
     /* Needed to wrap the number in 2 <b>s to give the correct effect for the border radius. 
@@ -415,7 +416,6 @@ body > h1 {
       width: 100%;
       padding: 0.3rem;
       background-color: var(--color-main-dark);
-
       border-radius: 0.3rem;
       z-index: 2;
     }
@@ -457,10 +457,10 @@ body > h1 {
     color: var(--color-off-black);
     font-size: 4.2rem;
     text-shadow: 0 0 2px white, 0 0 2px white;
-    line-height: 130%;
+    line-height: 90%;
 
     background-color: var(--color-main);
-    height: 4.5rem;
+    height: 5rem;
     padding: 0.5rem;
     border: 0.2rem solid white;
     border-radius: 0.2rem;
@@ -582,11 +582,11 @@ body > h1 {
   }
 }
 
-@media screen and (min-width: 370px) {
-  html {
-    font-size: 62.5%;
-  }
-}
+// @media screen and (min-width: 370px) {
+//   html {
+//     font-size: 62.5%;
+//   }
+// }
 
 .grain-overlay {
   position: absolute;

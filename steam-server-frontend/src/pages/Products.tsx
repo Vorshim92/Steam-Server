@@ -50,10 +50,7 @@ const Products = () => {
           )}
         </div>
       </div>
-      <div className="row row-gap-3 mt-5">
-        {games && games.map((game) => <ClashCard game={game} key={game.id} />)}
-        <FalloutCard />
-      </div>
+      <div className="row row-gap-3 mt-5">{games && games.map((game) => <ClashCard game={game} key={game.id} />)}</div>
     </>
   );
 };

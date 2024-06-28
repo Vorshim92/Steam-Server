@@ -10,4 +10,9 @@ class Game extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }
