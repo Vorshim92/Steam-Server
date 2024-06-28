@@ -26,10 +26,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="row gap-3">
+    <div className="row row-gap-3">
       {games && <StoreSlider newsData={games} />}
       <div>
-        <div className="mb-3 d-none w-100 d-sm-flex">
+        <div className="col-12 mb-3 d-none w-100 d-sm-flex">
           <span
             className={`d-flex flex-grow-1 align-items-center justify-content-center text-center border-bottom border-2 px-2 py-3 py-lg-4 ${selectedCategory === "isTop" ? "border-warning" : "border-secondary"} cursor-pointer`}
             onClick={() => setSelectedCategory("isTop")}
@@ -59,12 +59,12 @@ const Home = () => {
           </span>
         </div>
 
-        <div className="d-flex justify-content-evenly">
+        <div className="col-12 d-flex justify-content-evenly">
           {games
             .filter((game) => game[selectedCategory as keyof Game])
             .slice(0, 3)
             .map((game) => (
-              <div className="col-3" key={game.id}>
+              <div className=" col-12 col-md-6 col-lg-4 mb-3" key={game.id}>
                 <HomeCard game={game} />
               </div>
             ))}

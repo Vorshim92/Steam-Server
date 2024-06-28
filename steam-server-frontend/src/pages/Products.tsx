@@ -4,6 +4,7 @@ import ProductCard from "../components/Cards/ProductCard";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ClashCard from "../components/Cards/ClashCard";
+import FalloutCard from "../components/Cards/FalloutCard";
 const Products = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +50,10 @@ const Products = () => {
           )}
         </div>
       </div>
-      <div className="row row-gap-3 mt-5">{games && games.map((game) => <ClashCard game={game} key={game.id} />)}</div>
+      <div className="row row-gap-3 mt-5">
+        {games && games.map((game) => <ClashCard game={game} key={game.id} />)}
+        <FalloutCard />
+      </div>
     </>
   );
 };
