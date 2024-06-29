@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GameSeeder::class,
             ServiceSeeder::class,
+            SubscriptionSeeder::class,
+            GameServerSeeder::class,
+
         ]);
     }
 }

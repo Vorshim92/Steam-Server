@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gameservers', function (Blueprint $table) {
+        Schema::create('game_servers', function (Blueprint $table) {
             $table->id();
             $table->enum('status', ['active', 'inactive', 'pending'])->default('pending');
             $table->string('hostsystems')->nullable();
@@ -43,13 +43,13 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('gameservers', function (Blueprint $table) {
+        Schema::table('game_servers', function (Blueprint $table) {
             $table->dropForeign(['subscription_id']);
             $table->dropForeign(['user_id']);
             $table->dropForeign(['service_id']);
             // $table->dropForeign(['servermachine_id']);
             // $table->dropForeign(['location_id']);
         });
-        Schema::dropIfExists('gameservers');
+        Schema::dropIfExists('game_servers');
     }
 };

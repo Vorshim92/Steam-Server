@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user = User::with('subscriptions', 'subscriptions.gameserver')->findorfail($user->id);
+        $user = User::with('subscriptions', 'subscriptions.game_server')->findorfail($user->id);
         return ['data' => $user];
     }
 }
