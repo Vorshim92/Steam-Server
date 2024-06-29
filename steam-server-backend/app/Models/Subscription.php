@@ -21,7 +21,7 @@ class Subscription extends Model
         return $this->belongsTo(Service::class);
     }
 
-    public function gameserver(): HasOne
+    public function game_server(): HasOne
     {
         return $this->hasOne(GameServer::class);
     }

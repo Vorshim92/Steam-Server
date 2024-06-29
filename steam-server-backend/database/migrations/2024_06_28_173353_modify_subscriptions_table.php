@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('subscriptions', function (Blueprint $table) {
-            $table->foreignId('game_server_id')->unique()->nullable()->constrained('game_servers')->onUpdate('cascade')->onDelete('cascade');
-        });
+        // Schema::table('subscriptions', function (Blueprint $table) {
+        //     $table->foreignId('game_server_id')->unique()->nullable()->constrained('game_servers')->onUpdate('cascade')->onDelete('cascade');
+        // });
     }
 
     /**
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('subscriptions', function (Blueprint $table) {
-            $table->dropForeign(['gameserver_id']);
-        });
+        // Schema::table('subscriptions', function (Blueprint $table) {
+        //     $table->dropForeign(['gameserver_id']);
+        // });
     }
 };
