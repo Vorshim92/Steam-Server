@@ -1,6 +1,10 @@
-import { useAppSelector } from "../redux/hooks";
-
+import axios from "axios";
+import { getUserLogin } from "../redux/actionCreators/actionUserLogin";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useEffect } from "react";
 const Dashboard = () => {
+  const dispatch = useAppDispatch();
+
   const { user } = useAppSelector((state) => state.userLogin);
 
   return (
@@ -8,7 +12,7 @@ const Dashboard = () => {
       <div className="row">
         <div className="col-sm-3 dash-sidebar">
           <div className="hidden-xs">
-            <div className="content_box">
+            <div className="content-box">
               <div className="sb">
                 <div className="sb-profile">
                   <div className="sb-userinfoblock">
@@ -87,11 +91,17 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="col-sm-9">
+        <div className="col-sm-9 dash-rightbar">
           <div className="content-box">
-            <div className="servicetype-gs">
-              <h1>GAMESERVER</h1>
-              {/* {user.gameservers && user.gameservers.map((gameserver) => <GameServerCard key={gameserver.id} gameserver={gameserver} />)} */}
+            <div className="rb">
+              <h1>GAMESERVER:</h1>
+
+              {user?.subscriptions &&
+                user.subscriptions.map((subscription) => (
+                  <div className="servicetype-gs" key={subscription.game_server.id}>
+                    <h1 className="text-white"> {subscription.game_server.game_name} </h1>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

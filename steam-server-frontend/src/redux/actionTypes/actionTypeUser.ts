@@ -1,4 +1,4 @@
-import { User } from "../reducers/userLogin";
+import { User } from "../../interfaces/types";
 
 export enum ActionType {
   LOGIN_START = "LOGIN_START",

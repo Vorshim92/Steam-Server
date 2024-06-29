@@ -15,7 +15,19 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        $user = User::with('subscriptions', 'subscriptions.game_server')->findorfail($user->id);
-        return ['data' => $user];
+        // Verifica se l'utente è autenticato
+        if (!auth()->check()) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        // Verifica se l'utente loggato è lo stesso dell'utente richiesto
+        if (auth()->user()->id !== $user->id) {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
+        // Recupera l'utente con le relazioni
+        $user = User::with('subscriptions', 'subscriptions.game_server')->findOrFail($user->id);
+
+        return $user;
     }
 }

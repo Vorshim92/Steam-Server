@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 import { ActionType, Action } from "../actionTypes/actionTypeUser";
-import { User } from "../reducers/userLogin";
-export const getUserLogin = (formData: { email: string; password: string }) => {
+import { User } from "../../interfaces/types";
+export const getUserLogin = (formData?: { email: string; password: string }) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.LOGIN_START,
@@ -10,16 +10,23 @@ export const getUserLogin = (formData: { email: string; password: string }) => {
 
     try {
       // Get CSRF token
-      await axios.get("/sanctum/csrf-cookie");
+      // await axios.get("/sanctum/csrf-cookie");
 
       // Post login data
-      await axios.post("/login", formData);
+      if (formData) {
+        await axios.post("/login", formData);
+      }
+
       // Get user data
-      const { data } = await axios.get<User>(`/api/user`);
-      dispatch({
-        type: ActionType.LOGIN_SUCCESS,
-        payload: data,
-      });
+      const response = await axios.get(`/api/user/`);
+      if (response.status === 200) {
+        const { data: user } = await axios.get<User>(`/api/v1/users/${response.data.id}`);
+        // console.log(user);
+        dispatch({
+          type: ActionType.LOGIN_SUCCESS,
+          payload: user,
+        });
+      }
     } catch (err) {
       dispatch({
         type: ActionType.LOGIN_FAILURE,

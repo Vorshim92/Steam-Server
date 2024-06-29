@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import NavBar2 from "./components/NavBar/navbar-2/NavBar2";
 import SpinnerVorshim from "./components/Spinners/SpinnerVorshim";
 import ResetPassword from "./components/Sign/ResetPsw/ResetPassword";
+import { getUserLogin } from "./redux/actionCreators/actionUserLogin";
 
 // Utilizza React.lazy() per importare dinamicamente i componenti
 const Home = lazy(() => import("./pages/Home"));
@@ -31,24 +32,8 @@ function App() {
 
   useEffect(() => {
     const checkUser = async () => {
-      dispatch({
-        type: ActionType.LOGIN_START,
-      });
-
-      try {
-        const res = await axios("/api/user");
-        dispatch({
-          type: ActionType.LOGIN_SUCCESS,
-          payload: res.data,
-        });
-      } catch (err) {
-        dispatch({
-          type: ActionType.LOGIN_FAILURE,
-          payload: (err as Error).message,
-        });
-      }
+      await dispatch(getUserLogin());
     };
-
     if (user) {
       checkUser();
     }

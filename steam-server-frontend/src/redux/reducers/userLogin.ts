@@ -1,12 +1,6 @@
+import { User } from "../../interfaces/types";
 import { Action, ActionType } from "../actionTypes/actionTypeUser";
 
-export interface User {
-  id: number;
-  username: string;
-  email: string;
-  avatar: string | null;
-  role: string;
-}
 interface State {
   user: User | null;
   isLoading: boolean;
