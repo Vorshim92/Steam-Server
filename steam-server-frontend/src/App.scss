@@ -199,29 +199,4 @@ a {
     // background-color: #111111;
     color: #ffd744;
   }
-  .servicetype-gs {
-    padding: 5px;
-    background-color: #111111;
-    border: 1px solid #a19d90;
-    // border: 1px solid #ffd744;
-    & a {
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: 700;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding-left: 50px;
-      text-align: left;
-    }
-  }
-}
-
-.content-box {
-  background: rgba(48, 48, 48, 0.4);
-  background-size: contain !important;
-  width: auto !important;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

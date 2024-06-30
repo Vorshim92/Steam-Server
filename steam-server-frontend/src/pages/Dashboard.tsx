@@ -2,6 +2,7 @@ import axios from "axios";
 import { getUserLogin } from "../redux/actionCreators/actionUserLogin";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { useEffect } from "react";
+import GameServerCard from "../components/Cards/GameServerCard";
 const Dashboard = () => {
   const dispatch = useAppDispatch();
 
@@ -94,14 +95,9 @@ const Dashboard = () => {
         <div className="col-sm-9 dash-rightbar">
           <div className="content-box">
             <div className="rb">
-              <h1>GAMESERVER:</h1>
+              <h1 className="text-center">GAMESERVER:</h1>
 
-              {user?.subscriptions &&
-                user.subscriptions.map((subscription) => (
-                  <div className="servicetype-gs" key={subscription.game_server.id}>
-                    <h1 className="text-white"> {subscription.game_server.game_name} </h1>
-                  </div>
-                ))}
+              {user?.subscriptions && user.subscriptions.map((subscription) => <GameServerCard subscription={subscription} key={subscription.game_server.id} />)}
             </div>
           </div>
         </div>

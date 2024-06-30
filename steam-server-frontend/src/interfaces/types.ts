@@ -23,19 +23,19 @@ export interface Service {
   platform: string;
   slots: number;
   game_id: number;
-  created_at: Date;
-  updated_at: Date;
+  created_at: String;
+  updated_at: String;
 }
 
 export interface User {
   id: number;
   username: string;
   email: string;
-  email_verified_at: Date;
+  email_verified_at: String;
   avatar: null;
   role: string;
-  created_at: Date;
-  updated_at: Date;
+  created_at: String;
+  updated_at: String;
   subscriptions: Subscription[];
 }
 
@@ -48,13 +48,13 @@ export interface Subscription {
   subscription_type: string;
   subscription_status: string;
   subscription_period: string;
-  subscription_start: Date;
-  subscription_end: Date;
-  subscription_next_billing: Date;
-  subscription_last_billing: Date;
+  subscription_start: String;
+  subscription_end: String;
+  subscription_next_billing: String;
+  subscription_last_billing: String;
   user_id: number;
-  created_at: Date;
-  updated_at: Date;
+  created_at: String;
+  updated_at: String;
   game_server: GameServer;
 }
 
@@ -76,6 +76,6 @@ export interface GameServer {
   subscription_id: number;
   user_id: number;
   service_id: number;
-  created_at: Date;
-  updated_at: Date;
+  created_at: String;
+  updated_at: String;
 }

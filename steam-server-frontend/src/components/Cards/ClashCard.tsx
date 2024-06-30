@@ -1,4 +1,3 @@
-import React from "react";
 import { Game } from "../../interfaces/types";
 import "./ClashCard.scss";
 import { Link } from "react-router-dom";
