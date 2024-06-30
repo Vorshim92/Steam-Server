@@ -43,29 +43,11 @@ const Dashboard = () => {
                   </a>
                   <div className="sb-svctypelist">
                     <a href="/ita/services/index#gameserver" className="nd-type-game">
-                      Game Server <div className="sb-bubble">1</div>
+                      Game Servers: <div className="sb-bubble">{user?.subscriptions.length}</div>
                     </a>
-                    <a href="/ita/services/index#voiceserver" className="nd-type-voice">
-                      Voice Server
-                    </a>
-                    <div className="spc25"></div>
                     <a href="/ita/servicetypes/index" id="svcbuyerpop" className="nd-type-add">
                       Ordina servizio
                     </a>
-                    <div className="nd-type-add-select" id="svcbuyerpopmenu">
-                      <div>
-                        <a href="/ita/order-gameserver">
-                          <div className="nd-type-game"></div>Game Server
-                        </a>
-                        <a href="/ita/servicetypes/voiceserver">
-                          <div className="nd-type-voice"></div>Voice Server
-                        </a>
-                        <a href="/ita/servicetypes/orderselect/18">
-                          <div className="nd-type-voice"></div>TS3MusicBot
-                        </a>
-                      </div>
-                      <div className="clearfix"></div>
-                    </div>
                   </div>
                 </div>
                 <div className="sb-drop">
