@@ -54,7 +54,10 @@ const NavBar2 = () => {
           {user ? (
             <>
               <li className="menu-item">
-                <Link to="/dashboard">{user.username}</Link>
+                <Link to="/dashboard">
+                  <img className="user-avatar" src={user.avatar || "https://server.nitrado.net/users.nitrado/10576024.jpg"} alt="" />
+                  {user.username}
+                </Link>
                 <ol className="sub-menu">
                   <li className="menu-item">
                     <Link to="/myprofile">Mio Profilo</Link>
