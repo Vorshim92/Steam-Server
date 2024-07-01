@@ -6,6 +6,8 @@ import StoreSlider from "../components/Slider/StoreSlider";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const Home = () => {
+  console.log("sono in home");
+
   const [games, setGames] = useState<Game[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("isFeatured");
 
@@ -30,28 +32,19 @@ const Home = () => {
       {games && <StoreSlider newsData={games} />}
       <div>
         <div className="col-12 mb-3 d-none w-100 d-sm-flex">
-          <span
-            className={`d-flex flex-grow-1 align-items-center justify-content-center text-center border-bottom border-2 px-2 py-3 py-lg-4 ${selectedCategory === "isTop" ? "border-warning" : "border-secondary"} cursor-pointer`}
-            onClick={() => setSelectedCategory("isTop")}
-          >
+          <span className={`span-category  ${selectedCategory === "isTop" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isTop")}>
             <div className="d-flex align-items-center justify-content-center">
               <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isTop" ? "bg-warning" : "bg-secondary"} text-dark`}>SVG</span>
               <span className="text-truncate fw-semibold text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">Giochi Top</span>
             </div>
           </span>
-          <span
-            className={`d-flex flex-grow-1 align-items-center justify-content-center text-center border-bottom border-2 px-2 py-3 py-lg-4 ${selectedCategory === "isFeatured" ? "border-warning" : "border-secondary"} cursor-pointer`}
-            onClick={() => setSelectedCategory("isFeatured")}
-          >
+          <span className={`span-category ${selectedCategory === "isFeatured" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isFeatured")}>
             <div className="d-flex align-items-center justify-content-center">
               <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isFeatured" ? "bg-warning" : "bg-secondary"} text-light`}>SVG</span>
               <span className="text-truncate fw-semibold text-light text-lg sm:text-xl md:text-2xl lg:text-3xl">Giochi In Evidenza</span>
             </div>
           </span>
-          <span
-            className={`d-flex flex-grow-1 align-items-center justify-content-center text-center border-bottom border-2 px-2 py-3 py-lg-4 ${selectedCategory === "isLatest" ? "border-warning" : "border-secondary"} cursor-pointer`}
-            onClick={() => setSelectedCategory("isLatest")}
-          >
+          <span className={`span-category ${selectedCategory === "isLatest" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isLatest")}>
             <div className="d-flex align-items-center justify-content-center">
               <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isLatest" ? "bg-warning" : "bg-secondary"} text-light`}>SVG</span>
               <span className="text-truncate fw-semibold text-light text-lg sm:text-xl md:text-2xl lg:text-3xl">Ultimi giochi</span>

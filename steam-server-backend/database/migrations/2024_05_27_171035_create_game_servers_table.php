@@ -32,7 +32,6 @@ return new class extends Migration
             $table->foreignId('subscription_id')->unique()->constrained('subscriptions')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('service_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            // $table->foreignId('servermachine_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade'); // Assuming you will have a 'servermachines' table
 
             $table->timestamps();
         });

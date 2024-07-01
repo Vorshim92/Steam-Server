@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./navbar2.scss";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { userLogout } from "../../../redux/actionCreators/actionUserLogout";
+import SpinnerVorshim from "../../Spinners/SpinnerVorshim";
 
 const NavBar2 = () => {
   const { user, isLoading, error } = useAppSelector((state) => state.userLogin);
@@ -51,13 +52,17 @@ const NavBar2 = () => {
             </ol>
           </li>
 
-          {user ? (
+          {isLoading ? (
+            <div className="navSpinner">
+              <SpinnerVorshim />
+            </div>
+          ) : user ? (
             <>
               <li className="menu-item">
-                <Link to="/dashboard">
+                <a href="/dashboard">
                   <img className="user-avatar" src={user.avatar || "https://server.nitrado.net/users.nitrado/10576024.jpg"} alt="" />
                   {user.username}
-                </Link>
+                </a>
                 <ol className="sub-menu">
                   <li className="menu-item">
                     <Link to="/myprofile">Mio Profilo</Link>

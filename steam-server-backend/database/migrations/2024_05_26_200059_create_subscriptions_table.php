@@ -24,9 +24,8 @@ return new class extends Migration
             $table->string('subscription_end');
             $table->string('subscription_next_billing');
             $table->string('subscription_last_billing');
-
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            // Nota: non aggiungere qui la chiave esterna gameserver_id
+            $table->foreignId('service_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

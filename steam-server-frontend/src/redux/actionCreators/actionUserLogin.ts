@@ -4,7 +4,7 @@ import { ActionType, Action } from "../actionTypes/actionTypeUser";
 import { User } from "../../interfaces/types";
 export const getUserLogin = (formData?: { email: string; password: string }) => {
   return async (dispatch: Dispatch<Action>) => {
-    dispatch({
+    await dispatch({
       type: ActionType.LOGIN_START,
     });
 

@@ -4,6 +4,7 @@ import { userLoginReducer } from "./reducers/userLogin";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
+import { userCheckoutReducer } from "./reducers/userCheckout";
 
 const persistConfig = {
   key: "root",
@@ -12,6 +13,7 @@ const persistConfig = {
 };
 const rootReducer = combineReducers({
   userLogin: userLoginReducer,
+  userCheckout: userCheckoutReducer,
   // Aggiungi altri reducer qui
 });
 

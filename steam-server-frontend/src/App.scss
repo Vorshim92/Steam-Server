@@ -44,7 +44,7 @@ a {
     color: rgba(255, 255, 255, 0.3);
   }
   a {
-    color: $primary;
+    color: #ffd744;
   }
   .con {
     &.con-1 {
@@ -71,7 +71,7 @@ a {
     .icon {
       width: 50px;
       height: 50px;
-      background: $primary;
+      background: #ffd744;
       border-radius: 50%;
       margin: 0 auto;
       margin-bottom: 10px;
@@ -123,7 +123,7 @@ a {
         width: 130px;
         height: 52px;
         font-size: 16px;
-        background: $primary !important;
+        background: #ffd744 !important;
         border: none;
         @include border-radius(0);
         &:hover,
@@ -198,5 +198,66 @@ a {
     padding: 10px 0 15px 30px;
     // background-color: #111111;
     color: #ffd744;
+  }
+}
+
+//  HOME
+
+.span-category {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid; /* Assumendo che border-2 sia 2px */
+  padding-left: 0.5rem; /* px-2 corrisponde a 0.5rem */
+  padding-right: 0.5rem; /* px-2 corrisponde a 0.5rem */
+  padding-top: 1rem; /* py-3 corrisponde a 1rem */
+  padding-bottom: 1rem; /* py-3 corrisponde a 1rem */
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .span-category {
+    padding-top: 1.5rem; /* py-lg-4 corrisponde a 1.5rem */
+    padding-bottom: 1.5rem; /* py-lg-4 corrisponde a 1.5rem */
+  }
+}
+
+.searchVorshim {
+  margin-top: 10px;
+  border: 3px solid #ffd744;
+  background-color: #222222;
+  color: #ffd744;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  vertical-align: middle;
+  bottom: 14px;
+  right: 9px;
+  width: 220px;
+  padding: 0 18px;
+}
+
+.search-results {
+  position: absolute;
+  z-index: 50;
+  margin-top: 10px;
+  border: 3px solid #ffd744;
+  background-color: #222222;
+  outline: none;
+  display: block;
+  vertical-align: middle;
+  width: 50%;
+  padding: 0 18px;
+  max-height: 300px; /* Altezza massima, puoi modificarla a piacere */
+  overflow-y: auto; /* Aggiunge una barra di scorrimento verticale se necessario */
+  left: 50%; /* Posiziona il lato sinistro al 50% del contenitore genitore */
+  transform: translateX(-50%); /* Trasla l'elemento verso sinistra del 50% della sua larghezza */
+
+  &-item {
+    display: block;
+    color: #ffd744;
+    padding: 5px;
   }
 }

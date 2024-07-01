@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             GameSeeder::class,
             ServiceSeeder::class,
             SubscriptionSeeder::class,
+            OrderSeeder::class,
             GameServerSeeder::class,
 
         ]);

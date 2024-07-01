@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Game } from "../interfaces/types";
-import ProductCard from "../components/Cards/ProductCard";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import FalloutCard from "../components/Cards/FalloutCard";
+import ServiceCard from "../components/Cards/ServiceCard";
 const Product = () => {
   const [game, setGame] = useState<Game>();
   const { id } = useParams();
@@ -32,7 +31,7 @@ const Product = () => {
               <h1>{game.name}</h1>
             </div>
           </div>
-          <div className="row row-gap-3 mt-5">{game.services && game.services.map((service) => <FalloutCard key={service.id} service={service} />)}</div>
+          <div className="row row-gap-3 mt-5">{game.services && game.services.map((service) => <ServiceCard key={service.id} service={service} />)}</div>
         </>
       )}
     </>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./StoreSlider.module.css";
 import { Game } from "../../interfaces/types";
+import { Link } from "react-router-dom";
 
 const StoreSlider = ({ newsData }: { newsData: Game[] }) => {
   const gameList = newsData.slice(0, 6);
@@ -33,14 +34,14 @@ const StoreSlider = ({ newsData }: { newsData: Game[] }) => {
         >
           <div className={styles.itemText}>
             <img src={(gameList[counter].image_title && gameList[counter].image_title) || "storage/game_images/default_image_title.png"} alt="game" />
-            <h3>{gameList[counter].name}</h3>
+            <p>{gameList[counter].description}</p>
             <div className={styles.buttons}>
-              <a href="#!" className={`${styles.btn} ${styles.btnDownload}`}>
+              <Link to={`/products/${gameList[counter].id}`} className={`${styles.btn} ${styles.btnDownload}`}>
                 AFFITTA SUBITO IL TUO GAME SERVER
-              </a>
-              <a href="#!" className={`${styles.btn} ${styles.btnWishlist}`}>
+              </Link>
+              <Link to={`/products/${gameList[counter].id}`} className={`${styles.btn} ${styles.btnWishlist}`}>
                 +
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -51,7 +52,7 @@ const StoreSlider = ({ newsData }: { newsData: Game[] }) => {
             <li key={game.id} onClick={onClick} style={{ display: "block" }}>
               <div id={index.toString()} className={`${styles.game} ${index === counter ? styles.current : ""}`}>
                 <img src={game.image_vertical && game.image_vertical ? game.image_vertical : "storage/game_images/default_image_vertical.jpg"} alt="game" />
-                <p className="text-white">{game.name.split(" ").slice(0, 4).join(" ")}...</p>
+                <p className="text-white">{game.name}</p>
               </div>
             </li>
           ))}

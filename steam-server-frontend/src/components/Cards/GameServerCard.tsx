@@ -3,7 +3,6 @@ import { Subscription } from "../../interfaces/types";
 import "./GameServerCard.scss";
 const GameServerCard = ({ subscription }: { subscription: Subscription }) => {
   const [isSelected, setIsSelected] = useState(false);
-  console.log(subscription.subscription_end);
 
   return (
     <>

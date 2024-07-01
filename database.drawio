@@ -1,14 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="C-CDYiopamX6YyhbsEWv" name="Page-1">
-        <mxGraphModel dx="1124" dy="670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="853" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="259" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="231" target="254">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="231" value="&lt;font color=&quot;#cc0000&quot;&gt;USERS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;username;&lt;br&gt;email;&lt;br&gt;password;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="960" y="510" width="210" height="160" as="geometry"/>
+                    <mxGeometry x="1140" y="170" width="220" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="248" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#CC0000;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;" parent="1" source="234" target="247" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -19,8 +16,10 @@
                 <mxCell id="247" value="&lt;font color=&quot;#cc0000&quot;&gt;GAMES&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;name;&lt;br&gt;description;&lt;br&gt;image;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="750" y="980" width="210" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="250" value="" style="edgeStyle=none;html=1;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;" parent="1" source="249" target="234" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="250" value="" style="edgeStyle=none;html=1;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="253" target="234" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="855" y="710" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="251" style="edgeStyle=none;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="249" target="231" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -30,26 +29,29 @@
                         <mxPoint x="1290" y="980" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="257" value="" style="edgeStyle=none;html=1;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;" parent="1" source="249" target="253" edge="1">
+                <mxCell id="257" value="" style="edgeStyle=none;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="249" target="253" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="249" value="&lt;font color=&quot;#cc0000&quot;&gt;SUBSCRIPTIONS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status;&lt;br&gt;payment_method;&lt;br&gt;location;&lt;br&gt;price; (slot depend)&lt;br&gt;duration; (30dd)&lt;br&gt;FK:&lt;br&gt;service_id;&lt;br&gt;user_id;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1240" y="700" width="210" height="160" as="geometry"/>
+                <mxCell id="249" value="&lt;font color=&quot;#cc0000&quot;&gt;SUBSCRIPTIONS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status;&lt;br&gt;payment_method;&lt;br&gt;location;&lt;br&gt;price; (slot depend)&lt;br&gt;duration; (30dd)&lt;br&gt;FK:&lt;br&gt;service_id;&lt;br&gt;user_id;&lt;br&gt;order_id;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1440" y="450" width="210" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="252" value="1) Users (breeze)&lt;br&gt;2) Games&lt;br&gt;3) Subscriptions&lt;br&gt;4) Services" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" parent="1" vertex="1">
-                    <mxGeometry x="1220" y="200" width="140" height="160" as="geometry"/>
+                    <mxGeometry x="1420" y="120" width="140" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="253" value="&lt;font color=&quot;#cc0000&quot;&gt;PAYMENTS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1590" y="580" width="210" height="160" as="geometry"/>
+                <mxCell id="260" value="" style="edgeStyle=none;html=1;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="253" target="231">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="253" value="&lt;font color=&quot;#cc0000&quot;&gt;ORDERS&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status: open (defualt)&lt;br&gt;&lt;br&gt;FK:&lt;br&gt;service_id;&lt;br&gt;user_id;&lt;br&gt;subscription_id;&lt;br&gt;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="420" width="210" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="258" value="" style="edgeStyle=none;html=1;startArrow=ERmany;startFill=0;endArrow=none;endFill=0;" parent="1" source="254" target="255" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="254" value="&lt;font color=&quot;#cc0000&quot;&gt;GameServers&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status;&lt;br&gt;hostsystems;&lt;br&gt;price; (slot depend)&lt;br&gt;duration; (30dd)&lt;br&gt;username;&lt;br&gt;location_id&lt;br&gt;ip;&lt;br&gt;port;&lt;br&gt;rcon_port;&lt;br&gt;memory;&lt;br&gt;game;&lt;br&gt;game_name;&lt;br&gt;slots;&lt;br&gt;credentials;&lt;br&gt;FK:&lt;br&gt;subscription_status;&lt;br&gt;user_id;&lt;br&gt;service_id;&lt;br&gt;servermachine_id;&lt;br&gt;}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1140" y="940" width="210" height="370" as="geometry"/>
+                    <mxGeometry x="1350" y="790" width="210" height="370" as="geometry"/>
                 </mxCell>
                 <mxCell id="255" value="&lt;font color=&quot;#cc0000&quot;&gt;ServerMachines&lt;/font&gt;{&lt;br&gt;id;&lt;br&gt;status;&lt;br&gt;servername;&lt;br&gt;hostname;&lt;br&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1420" y="980" width="210" height="370" as="geometry"/>
+                    <mxGeometry x="1730" y="810" width="210" height="370" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -15,6 +15,7 @@ import NavBar2 from "./components/NavBar/navbar-2/NavBar2";
 import SpinnerVorshim from "./components/Spinners/SpinnerVorshim";
 import ResetPassword from "./components/Sign/ResetPsw/ResetPassword";
 import { getUserLogin } from "./redux/actionCreators/actionUserLogin";
+import Checkout from "./pages/Checkout";
 
 // Utilizza React.lazy() per importare dinamicamente i componenti
 const Home = lazy(() => import("./pages/Home"));
@@ -24,6 +25,7 @@ const Register = lazy(() => import("./components/Sign/Register/Register"));
 const Login = lazy(() => import("./components/Sign/Login/Login"));
 
 function App() {
+  console.log("sono in APP");
   axios.defaults.withCredentials = true;
   axios.defaults.withXSRFToken = true;
   const dispatch = useAppDispatch();
@@ -43,20 +45,25 @@ function App() {
     <>
       {isLoading ? (
         <div className="spinner-overlay">
-          {/* <InfinitySpin width="400" color="#0077FF" /> */}
           <SpinnerVorshim />
         </div>
       ) : (
         <BrowserRouter>
-          {/* <Navbar /> */}
           <NavBar2 />
           <NavBarVintage />
           <div className="container marginNav">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="spinner-overlay">
+                  <SpinnerVorshim />
+                </div>
+              }
+            >
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:id" element={<Product />} />
+                <Route path="/checkout/" element={<Checkout />} />
                 <Route element={<ProtectedRoutes />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                 </Route>

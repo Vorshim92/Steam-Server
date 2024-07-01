@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('subscriptions', function (Blueprint $table) {
-        //     $table->foreignId('game_server_id')->unique()->nullable()->constrained('game_servers')->onUpdate('cascade')->onDelete('cascade');
-        // });
+        Schema::table('subscriptions', function (Blueprint $table) {
+            $table->foreignId('order_id')->unique()->constrained('orders')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreignId('game_server_id')->unique()->nullable()->constrained('game_servers')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**

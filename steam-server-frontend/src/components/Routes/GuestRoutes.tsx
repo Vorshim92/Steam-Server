@@ -2,6 +2,8 @@ import { useAppSelector } from "../../redux/hooks";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 export const GuestRoutes = () => {
+  console.log("sono in guest");
+
   const user = useAppSelector((state) => state.userLogin.user);
   let location = useLocation();
 

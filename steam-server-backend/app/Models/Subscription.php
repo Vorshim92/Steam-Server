@@ -25,4 +25,9 @@ class Subscription extends Model
     {
         return $this->hasOne(GameServer::class);
     }
+
+    public function order(): HasOne
+    {
+        return $this->hasOne(Order::class);
+    }
 }
