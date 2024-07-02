@@ -261,3 +261,24 @@ a {
     padding: 5px;
   }
 }
+
+.checkout {
+  margin-top: 10px;
+  background-color: #111111;
+
+  .check-account {
+    border: 3px solid #ffd744;
+    background-color: #222222;
+    padding: 0 18px;
+  }
+  .check-cart {
+    border: 3px solid #ffd744;
+    background-color: #222222;
+    padding: 0 18px;
+
+    .btn-checkout {
+      background-color: #ffd744;
+      color: #111111;
+    }
+  }
+}

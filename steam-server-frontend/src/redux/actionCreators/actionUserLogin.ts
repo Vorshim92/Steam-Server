@@ -10,7 +10,7 @@ export const getUserLogin = (formData?: { email: string; password: string }) => 
 
     try {
       // Get CSRF token
-      // await axios.get("/sanctum/csrf-cookie");
+      await axios.get("/sanctum/csrf-cookie");
 
       // Post login data
       if (formData) {

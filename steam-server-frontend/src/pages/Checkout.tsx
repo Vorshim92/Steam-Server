@@ -10,12 +10,12 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="row">
+      <div className="row checkout">
         <div className="col-12">
           <h1 className="text-center text-warning">Server Selezionato</h1>
         </div>
         <div className="row">
-          <div className="col-6 text-white">
+          <div className="col-6 text-white check-account">
             {user ? (
               <div>
                 <h1>{user.username}</h1>
@@ -28,17 +28,20 @@ const Checkout = () => {
               </div>
             )}
           </div>
-          <div className="col-6 text-white">
+          <div className="col-6 text-white check-cart">
             <h1>CARRELLO</h1>
             {service ? (
               <>
-                <h1>{service.game_name}</h1>
-                <h2>Price: {service.price}€</h2>
-                <h3>Location: {service.location}</h3>
-                <h3>Slots: {service.slots}</h3>
-                <h3>RAM: {service.ram}</h3>
-                <h3>CPU: {service.cpu}</h3>
-                <h3>Platform: {service.platform}</h3>
+                <div>
+                  <h1>{service.game_name}</h1>
+                  <h2>Price: {service.price}€</h2>
+                  <h3>Location: {service.location}</h3>
+                  <h3>Slots: {service.slots}</h3>
+                  <h3>RAM: {service.ram}</h3>
+                  <h3>CPU: {service.cpu}</h3>
+                  <h3>Platform: {service.platform}</h3>
+                </div>
+                <div className="d-flex justify-content-center">{user && <button className="btn-checkout">Acquista Server</button>}</div>
               </>
             ) : (
               <h1>Seleziona un server</h1>

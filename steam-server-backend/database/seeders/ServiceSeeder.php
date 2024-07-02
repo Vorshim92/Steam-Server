@@ -17,7 +17,7 @@ class ServiceSeeder extends Seeder
 
         // id = 1 (Project Zomboid)
         Service::factory()->create([
-            'type' => 'Promo',
+            'type' => 'promo',
             'game_name' => 'Project Zomboid',
             'description' => 'Steam',
             'price' => 5,
@@ -29,7 +29,7 @@ class ServiceSeeder extends Seeder
             'game_id' => 1,
         ]);
         Service::factory()->create([
-            'type' => 'Promo',
+            'type' => 'promo',
             'game_name' => 'Project Zomboid',
             'description' => 'Steam',
             'price' => 10,
@@ -41,7 +41,7 @@ class ServiceSeeder extends Seeder
             'game_id' => 1,
         ]);
         Service::factory()->create([
-            'type' => 'Promo',
+            'type' => 'promo',
             'game_name' => 'Project Zomboid',
             'description' => 'Steam',
             'price' => 15,
@@ -53,7 +53,7 @@ class ServiceSeeder extends Seeder
             'game_id' => 1,
         ]);
         Service::factory()->create([
-            'type' => 'Custom',
+            'type' => 'custom',
             'game_name' => 'Project Zomboid',
             'description' => 'Steam',
             'price' => 5,

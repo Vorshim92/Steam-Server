@@ -1,14 +1,11 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-import { Navbar } from "./components/NavBar/navbar-4/NavBar";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
-import { ActionType } from "./redux/actionTypes/actionTypeUser";
 import { GuestRoutes } from "./components/Routes/GuestRoutes";
 import { ProtectedRoutes } from "./components/Routes/ProtectedRoutes";
-import { InfinitySpin } from "react-loader-spinner";
 import NavBarVintage from "./components/NavBar/navbar-1/NavBarVintage";
 import Dashboard from "./pages/Dashboard";
 import NavBar2 from "./components/NavBar/navbar-2/NavBar2";
@@ -36,9 +33,11 @@ function App() {
     const checkUser = async () => {
       await dispatch(getUserLogin());
     };
-    if (user) {
-      checkUser();
-    }
+    // if (!user) {
+    //   return;
+    // }
+
+    checkUser();
   }, [dispatch]);
 
   return (
@@ -64,6 +63,7 @@ function App() {
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:id" element={<Product />} />
                 <Route path="/checkout/" element={<Checkout />} />
+                <Route path="/custom-server/" element={<div>CUSTOM SERVER</div>} />
                 <Route element={<ProtectedRoutes />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                 </Route>

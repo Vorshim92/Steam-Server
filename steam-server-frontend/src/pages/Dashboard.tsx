@@ -58,7 +58,7 @@ const Dashboard = () => {
                       </a>
                       <div className="sb-svctypelist">
                         <a href="/ita/services/index#gameserver" className="nd-type-game">
-                          Game Servers: <div className="sb-bubble">{user?.subscriptions.length}</div>
+                          Game Servers: <div className="sb-bubble">{user?.subscriptions && user?.subscriptions.length > 0 ? user?.subscriptions.length : 0}</div>
                         </a>
                         <a href="/ita/servicetypes/index" id="svcbuyerpop" className="nd-type-add">
                           Ordina servizio
