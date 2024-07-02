@@ -1,3 +1,4 @@
+import CustomServer from "../components/CustomServer";
 import Login from "../components/Sign/Login/Login";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
@@ -30,7 +31,9 @@ const Checkout = () => {
           </div>
           <div className="col-6 text-white check-cart">
             <h1>CARRELLO</h1>
-            {service ? (
+            {service && service.type === "custom" ? (
+              <CustomServer service={service} />
+            ) : service?.type === "promo" ? (
               <>
                 <div>
                   <h1>{service.game_name}</h1>

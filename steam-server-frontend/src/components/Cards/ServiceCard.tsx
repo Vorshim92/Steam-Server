@@ -8,11 +8,7 @@ const ServiceCard = ({ service }: { service: Service }) => {
 
   const handleClick = () => {
     dispatch({ type: "SERVICE_ADD", payload: service });
-    if (service.type === "custom") {
-      return navigate("/custom-server/");
-    } else {
-      return navigate("/checkout/");
-    }
+    navigate("/checkout");
   };
 
   return (

@@ -63,7 +63,6 @@ function App() {
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:id" element={<Product />} />
                 <Route path="/checkout/" element={<Checkout />} />
-                <Route path="/custom-server/" element={<div>CUSTOM SERVER</div>} />
                 <Route element={<ProtectedRoutes />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                 </Route>
