@@ -13,19 +13,19 @@ class OrderSeeder extends Seeder
      */
     public function run(): void
     {
-        // Order::factory(10)->create([
-        //     'price' => 5.0,
-        //     'status' => 'pending',
-        //     'user_id' => 1,
-        //     'service_id' => 1,
-        //     // 'subscription_id' => 1,
-        // ]);
-        // Order::factory(10)->create([
-        //     'price' => 10.0,
-        //     'status' => 'pending',
-        //     'user_id' => 1,
-        //     'service_id' => 1,
-        //     // 'subscription_id' => 1,
-        // ]);
+        Order::factory(10)->create([
+            'price' => 5.0,
+            'status' => 'pending',
+            'user_id' => 1,
+            'service_id' => 1,
+            'subscription_id' => 1,
+        ]);
+        Order::factory(10)->create([
+            'price' => 10.0,
+            'status' => 'pending',
+            'user_id' => 1,
+            'service_id' => 2,
+            'subscription_id' => 2,
+        ]);
     }
 }
