@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->decimal('price', 8, 2);
             $table->enum('status', ['pending', 'paid', 'cancelled'])->default('pending');
+            $table->integer('ram')->nullable();
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('service_id')->constrained('services')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('subscription_id')->constrained('subscriptions')->onUpdate('cascade')->onDelete('cascade');

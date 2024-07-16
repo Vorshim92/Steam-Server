@@ -22,7 +22,7 @@ class StoreServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'ram' => 'required|in:4,8,16,32,64,128',
         ];
     }
 }

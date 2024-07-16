@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('description');
             $table->integer('price');
             $table->string('cpu');
-            $table->enum('ram', ['4', '8', '16', '32', '64', '128'])->default('4');
+            $table->integer('ram')->default(4);
             $table->enum('location', ['Frankfurt', 'London', 'Milan']);
             $table->enum('platform', ['steam', 'pc'])->default('steam');
-            $table->integer('slots')->unsigned();
+            $table->integer('slots')->unsigned()->default(4);
             $table->foreignId('game_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

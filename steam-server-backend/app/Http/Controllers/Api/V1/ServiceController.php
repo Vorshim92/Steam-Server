@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Service;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
@@ -64,5 +65,31 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         //
+    }
+
+    public function createTempCustomService(Request $request)
+    {
+        $requestData = $request->all();
+        $validateData = $request->validate([
+            'id' => 'required',
+            'cpu' => 'required|string',
+            'ram' => 'required|integer',
+            'slots' => 'required|integer',
+            'game_id' => 'required|integer',
+        ]);
+
+        try {
+            $service = new Service();
+            $service->id = $validateData['id'];
+            $service->type = "custom";
+            $service->cpu = $validateData['cpu'];
+            $service->ram = $validateData['ram'];
+            $service->slots = $validateData['slots'];
+            $service->game_id = $validateData['game_id'];
+            // $service->save();
+            return $service;
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error creating service'], 500);
+        }
     }
 }

@@ -31,33 +31,35 @@ const Home = () => {
     <div className="row row-gap-3">
       {games && <StoreSlider newsData={games} />}
       <div>
-        <div className="col-12 mb-3 d-none w-100 d-sm-flex">
-          <span className={`span-category  ${selectedCategory === "isTop" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isTop")}>
-            <div className="d-flex align-items-center justify-content-center">
-              <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isTop" ? "bg-warning" : "bg-secondary"} text-dark`}>SVG</span>
-              <span className="text-truncate fw-semibold text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">Giochi Top</span>
-            </div>
-          </span>
-          <span className={`span-category ${selectedCategory === "isFeatured" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isFeatured")}>
-            <div className="d-flex align-items-center justify-content-center">
-              <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isFeatured" ? "bg-warning" : "bg-secondary"} text-light`}>SVG</span>
-              <span className="text-truncate fw-semibold text-light text-lg sm:text-xl md:text-2xl lg:text-3xl">Giochi In Evidenza</span>
-            </div>
-          </span>
-          <span className={`span-category ${selectedCategory === "isLatest" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isLatest")}>
-            <div className="d-flex align-items-center justify-content-center">
-              <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isLatest" ? "bg-warning" : "bg-secondary"} text-light`}>SVG</span>
-              <span className="text-truncate fw-semibold text-light text-lg sm:text-xl md:text-2xl lg:text-3xl">Ultimi giochi</span>
-            </div>
-          </span>
+        <div className="row mb-3 d-none w-100 d-sm-flex">
+          <div className="col-12 d-sm-flex">
+            <span className={`span-category  ${selectedCategory === "isTop" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isTop")}>
+              <div className="d-flex align-items-center justify-content-center">
+                <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isTop" ? "bg-warning" : "bg-secondary"} text-dark`}>SVG</span>
+                <span className="text-truncate fw-semibold text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">Giochi Top</span>
+              </div>
+            </span>
+            <span className={`span-category ${selectedCategory === "isFeatured" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isFeatured")}>
+              <div className="d-flex align-items-center justify-content-center">
+                <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isFeatured" ? "bg-warning" : "bg-secondary"} text-light`}>SVG</span>
+                <span className="text-truncate fw-semibold text-light text-lg sm:text-xl md:text-2xl lg:text-3xl">Giochi In Evidenza</span>
+              </div>
+            </span>
+            <span className={`span-category ${selectedCategory === "isLatest" ? "border-warning" : "border-secondary"} `} onClick={() => setSelectedCategory("isLatest")}>
+              <div className="d-flex align-items-center justify-content-center">
+                <span className={`me-2 d-none d-md-inline-block rounded-pill px-3 py-1 ${selectedCategory === "isLatest" ? "bg-warning" : "bg-secondary"} text-light`}>SVG</span>
+                <span className="text-truncate fw-semibold text-light text-lg sm:text-xl md:text-2xl lg:text-3xl">Ultimi giochi</span>
+              </div>
+            </span>
+          </div>
         </div>
 
-        <div className="col-12 d-flex justify-content-evenly">
+        <div className="row mb-3 d-none w-100 d-sm-flex">
           {games
             .filter((game) => game[selectedCategory as keyof Game])
             .slice(0, 3)
             .map((game) => (
-              <div className=" col-12 col-md-6 col-lg-4 mb-3" key={game.id}>
+              <div className=" col-12 col-md-6 col-lg-4 mb-3 d-sm-flex justify-content-center" key={game.id}>
                 <HomeCard game={game} />
               </div>
             ))}
